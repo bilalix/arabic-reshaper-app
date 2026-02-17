@@ -1,4 +1,3 @@
-import React from 'react';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
@@ -6,10 +5,10 @@ import Link from '@mui/material/Link';
 function AraFooter() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
-            جميع الحقوق <b>غير</b> محفوظة
+            صُنع بحب كمشروع مفتوح المصدر
             <br />
             <Link href="https://github.com/bilalix/arabic-reshaper-app">
-                رابط الكود المفتوح المصدر
+                رابط الكود على GitHub
             </Link>{' '}
             <br />
             {new Date().getFullYear()}

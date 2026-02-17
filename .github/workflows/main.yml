@@ -23,7 +23,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job gh-pages
     steps:
       # Checks-out the repository under $GITHUB_WORKSPACE, so that the job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
 
       # Runs a single command using the runners shell
       - name: Install required dependencies

@@ -1,28 +1,26 @@
 import React from "react";
-import Container from '@material-ui/core/Container';
-
-// Configure JSS for RTL
-import { create } from 'jss';
-import rtl from 'jss-rtl';
-import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+import { CacheProvider } from "@emotion/react";
+import createCache from "@emotion/cache";
+import { prefixer } from "stylis";
+import rtlPlugin from "@mui/stylis-plugin-rtl";
 import Layout from "./Layout";
 import AraRoutes from "./AraRoutes";
 import CustomThemeProvider from './themes/CustomThemeProvider';
 
-
-const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+const rtlCache = createCache({
+  key: "muirtl",
+  stylisPlugins: [prefixer, rtlPlugin],
+});
 
 function App(props) {
   return (
-    <CustomThemeProvider>
-      <StylesProvider jss={jss}>
-        <Container component="main" maxWidth="lg">
-          <Layout {...props}>
-            <AraRoutes />
-          </Layout>
-        </Container>
-      </StylesProvider>
-    </CustomThemeProvider>
+    <CacheProvider value={rtlCache}>
+      <CustomThemeProvider>
+        <Layout {...props}>
+          <AraRoutes />
+        </Layout>
+      </CustomThemeProvider>
+    </CacheProvider>
   );
 }
 

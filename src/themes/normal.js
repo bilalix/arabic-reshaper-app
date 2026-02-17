@@ -1,5 +1,5 @@
-import { createTheme } from '@material-ui/core/styles'
-import { red } from '@material-ui/core/colors'
+import { createTheme } from '@mui/material/styles'
+import { red } from '@mui/material/colors'
 
 // Normal or default theme
 const theme = createTheme({
@@ -22,11 +22,13 @@ const theme = createTheme({
         },
     },
     // Get a beautiful TextArea in Material UI: https://stackoverflow.com/a/64051350/4488332
-    overrides: {
+    components: {
         MuiOutlinedInput: {
-            multiline: {
-                fontWeight: 'bold',
-                fontSize: '20px'
+            styleOverrides: {
+                inputMultiline: {
+                    fontWeight: 'bold',
+                    fontSize: '20px'
+                }
             }
         }
     },

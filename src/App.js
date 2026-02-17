@@ -1,7 +1,6 @@
 import React from "react";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import Container from '@mui/material/Container';
 import { prefixer } from "stylis";
 import rtlPlugin from "@mui/stylis-plugin-rtl";
 import Layout from "./Layout";
@@ -17,11 +16,9 @@ function App(props) {
   return (
     <CacheProvider value={rtlCache}>
       <CustomThemeProvider>
-        <Container component="main" maxWidth="lg">
-          <Layout {...props}>
-            <AraRoutes />
-          </Layout>
-        </Container>
+        <Layout {...props}>
+          <AraRoutes />
+        </Layout>
       </CustomThemeProvider>
     </CacheProvider>
   );

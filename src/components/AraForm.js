@@ -23,7 +23,7 @@ const CopyToClipText = ({ text }) => {
             document.execCommand('copy');
             setData(null);
         }
-    }, [data, myRef.current]);
+    }, [data]);
 
     return <div>{data && <textarea ref={myRef}>{data}</textarea>}</div>;
 };
@@ -54,16 +54,12 @@ export default function AraForm() {
         setOpen(false);
     };
 
-    const handleValueChange = () => {
+    useEffect(() => {
         const transformedText = reshaper.ArabicShaper.convertArabic(originalText)
         // for some reason, transformedText doesn't show up properly on Davinci Resolve 17
         // so I neede to reverse the string
         setReshapedText([...transformedText].reverse().join(''))
-    }
-
-    useEffect(() => {
         // useEffect is needed sice setState is asynchronous: https://stackoverflow.com/a/65807556/4488332
-        handleValueChange()
         originalText ? setCopySuccess(false) : setCopySuccess(true)
     }, [originalText])
 

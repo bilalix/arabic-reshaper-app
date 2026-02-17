@@ -1,20 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles((theme) => ({
-    content: {
-        fontSize: '20px',
-    },
-}));
+import Box from '@mui/material/Box';
 
 function HowItWorks() {
-    const classes = useStyles()
-
     return (
         <div dir="ltr">
             <h1>How It Works?</h1>
-            <div className={classes.content}>
+            <Box sx={{ fontSize: '20px' }}>
                 <p>
                     Arabic script is very special with two essential features:
                     <ol>
@@ -52,7 +43,7 @@ function HowItWorks() {
                     <li><a href="http://www.arabic-text.com/">Arabic-text.com</a></li>
                     <li><a href="https://reshaper.mpcabd.xyz/">Online Arabic Reshaper</a></li>
                 </ul>
-            </div>
+            </Box>
         </div>
     );
 }

@@ -1,27 +1,15 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles } from '@material-ui/core/styles';
-
-import { TextField, InputAdornment, Button } from "@material-ui/core";
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import Button from '@mui/material/Button';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 import reshaper from 'arabic-persian-reshaper'
-
-const useStyles = makeStyles((theme) => ({
-    paper: {
-        marginTop: theme.spacing(1),
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.primary.main,
-    }
-}));
 
 // TODO: Read more about Ref and how it works (https://stackoverflow.com/a/63559549/4488332)
 const CopyToClipText = ({ text }) => {
@@ -45,8 +33,6 @@ function Alert(props) {
 }
 
 export default function AraForm() {
-    const classes = useStyles()
-
     const [originalText, setOriginalText] = useState('')
     const [reshapedText, setReshapedText] = useState('')
 
@@ -84,7 +70,7 @@ export default function AraForm() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <div className={classes.paper}>
+            <Box sx={{ mt: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {/* <h2>النص الأصلي</h2> */}
                 <TextField
                     id="outlined-multiline-static-original"
@@ -132,7 +118,7 @@ export default function AraForm() {
                         تم نسخ النص بنجاح!
                     </Alert>
                 </Snackbar>
-            </div>
+            </Box>
             <CopyToClipText text={copyText} />
         </React.Fragment>
     );

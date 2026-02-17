@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from '@mui/material/styles'
 import getTheme from './base'
 
@@ -22,6 +22,10 @@ const CustomThemeProvider = (props) => {
 
     // Retrieve the theme object by theme name
     const theme = getTheme(themeName)
+
+    useEffect(() => {
+        document.documentElement.setAttribute('dir', theme.direction || 'rtl')
+    }, [theme])
 
     // Wrap _setThemeName to store new theme names in localStorage
     const setThemeName = (name) => {

@@ -113,7 +113,12 @@ export default function AraForm() {
                         )
                     }}
                 />
-                <Snackbar open={open} autoHideDuration={2500} onClose={handleClose}>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={2500}
+                    onClose={handleClose}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                >
                     <Alert onClose={handleClose} severity="success">
                         تم نسخ النص بنجاح!
                     </Alert>

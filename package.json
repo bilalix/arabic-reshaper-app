@@ -52,5 +52,11 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "overrides": {
+    "bfj": "9.1.3",
+    "nth-check": "2.1.1",
+    "serialize-javascript": "7.0.4",
+    "resolve-url-loader": "5.0.0"
   }
 }

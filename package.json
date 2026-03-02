@@ -52,5 +52,8 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "overrides": {
+    "bfj": "9.1.3"
   }
 }

@@ -10,7 +10,7 @@ function AraHeader() {
         <Box sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
             <Box
                 component="img"
-                src={`${process.env.PUBLIC_URL}/images/logo.png`}
+                src={`${import.meta.env.BASE_URL}images/logo.png`}
                 alt="Arabic Reshaper logo"
                 sx={{ width: { xs: 110, sm: 130 }, height: 'auto' }}
             />
